@@ -1,0 +1,10 @@
+package fr.isep.tp1;
+
+public class Exercice {
+    public static void main(String[] args) {
+     // Des choses ici
+}
+    // Attention a bien recopier ‘public static void’
+    public static void maFonction() {
+     // Contenu de la fonction
+} }
