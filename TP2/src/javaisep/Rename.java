@@ -10,36 +10,40 @@ public class Rename {
 		System.out.println("Quel exercice ? Saisissez: ");
 		int choice = scanner.nextInt();
 		switch (choice) {
-		  case 1:
-				discriminant();
-		    break;
-		  case 2:
-				parite();
-		    break;
-		  case 3:
-				max();
-		    break;
-		  case 4:
-				egaliteStr();
-		    break;
-		  case 5:
-				factorielle();
-		    break;
-		  case 6:
-				//countdown();
-		    break;
-		  case 7:
-				regle();
+		case 1:
+			discriminant();
+			break;
+		case 2:
+			parite();
+			break;
+		case 3:
+			max();
+			break;
+		case 4:
+			egaliteStr();
+			break;
+		case 5:
+			factorielle();
+			break;
+		case 6:
+			try {
+				countdown();
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			break;
+		case 7:
+			regle();
 
-		    break;
+			break;
+		case 8:
+			// tableMultiplication();
+
+			break;
 		}
-	
-	
-	
 
-		// tableMultiplication();
-	
-		//initialisationTableau();
+		// initialisationTableau();
 	}
 
 	public static void discriminant() {
@@ -173,11 +177,6 @@ public class Rename {
 //		}
 //
 //	}
-
-
-
-	
-	
 
 	public static void initialisationTableau() {
 		int[] tableau = new int[4];
