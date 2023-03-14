@@ -15,4 +15,5 @@ public abstract class Character {
     public abstract int attack();
     public abstract int defend();
 
+
 }
