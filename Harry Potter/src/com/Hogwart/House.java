@@ -1,14 +1,9 @@
 package com.Hogwart;
+import lombok.*;
 
-public class House {
-    private String name;
-
-    public House(String name){
-        this.name = name;
-    }
-
-    public String getName() {
-        return name;
-    }
-
+public enum House {
+    GRYFFINDOR,
+    HUFFLEPUFF,
+    RAVENCLAW,
+    SLYTHERIN
 }

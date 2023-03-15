@@ -1,25 +1,15 @@
 package com.Hogwart;
-
 import java.util.Random;
 
 public class SortingHat {
-    private House[] houses;
+    private Random random;
 
     public SortingHat() {
-        // Initialisation des maisons de Poudlard
-        this.houses = new House[] {
-                new House("Gryffondor"),
-                new House("Serdaigle"),
-                new House("Poufsouffle"),
-                new House("Serpentard")
-        };
+        random = new Random();
     }
 
-    public House assignHouse(Wizard wizard) {
-        // Algorithme de tri basé sur la baguette magique du sorcier
-        // ...
-
-        // Retourne une maison assignée au hasard
-        return houses[new Random().nextInt(houses.length)];
+    public House assignHouse() {
+        int randNum = random.nextInt(4);
+        return House.values()[randNum];
     }
 }

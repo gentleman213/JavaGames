@@ -5,10 +5,9 @@ public class GameLogic {
     static Scanner scanner = new Scanner(System.in);
     static Wizard wizard;
     public static boolean isRunning;
+    private House house;
 
     int nombreDePotions = wizard.getPotions().size();
-
-
 
     //enemey names
     public static String[] enemies = {"Troll","Basilic","Dementors","Voldemort & Peter Portolion","Dolores Umbrage","The Death Eaters","Voldemort and Bellatrix Lestrange"};
@@ -87,10 +86,11 @@ public class GameLogic {
                 nameSet = true;
         } while(!nameSet);
 
-
+        SortingHat sortingHat = new SortingHat();
+        House house = sortingHat.assignHouse();
 
         //create new player object with the name
-        wizard = new Wizard(name);
+        wizard = new Wizard(name, house);
 
         //print story intro
         Story.printIntro();
@@ -117,14 +117,13 @@ public class GameLogic {
         anythingToContinue();
 
         // Appel au Choipeau Magique pour assigner une maison
-        SortingHat sortingHat = new SortingHat();
-        House assignedHouse = sortingHat.assignHouse(wizard);
         clearConsole();
-        printHeading(name + " was sorted into " + assignedHouse.getName() + " House by the Sorting Hat");
+        printHeading(name + " was sorted into " + wizard.getHouse().name() + " House by the Sorting Hat");
         System.out.println("You are now ready to begin your first year in Hogwart!");
         anythingToContinue();
         //setting is running to true, so the game loop can continue
         isRunning = true;
+
 
         //start main game loop
         gameLoop();
@@ -137,6 +136,7 @@ public class GameLogic {
     //printing out the most important information about the player character
     public static void characterInfo(){
         clearConsole();
+        System.out.println(wizard.getHouse());
         printHeading("CHARACTER INFO");
         System.out.println(wizard.name+"\tHP:"+wizard.hp+"/"+wizard.maxHp);
         printSeperator(20);
@@ -161,15 +161,6 @@ public class GameLogic {
 
 
 
-
-    //creating a random battle
-    public static void randomBattle(){
-        clearConsole();
-        printHeading("You encountered an ennemy");
-        anythingToContinue();
-        //creating new ennemy with random name
-        battle(new Enemy(enemies[(int)(Math.random()* enemies.length)],10));
-    }
 
     //the main BATTLE method
     public static void battle(Enemy enemy){
@@ -230,7 +221,11 @@ public class GameLogic {
                     input = readInt("->", 2);
                     if (input == 1) {
                         //player actually took it
-                        wizard.usePotion(new Potion(10));
+                        if (wizard.getHouse() == House.GRYFFINDOR){
+                            wizard.usePotion(new Potion(40));
+                        }else {
+                            wizard.usePotion(new Potion(10));
+                        }
                         clearConsole();
                         printHeading("You drank a magic potion. You have now HP: " + wizard.hp);
                         anythingToContinue();
