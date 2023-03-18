@@ -6,19 +6,18 @@ import lombok.*;
 @Getter
 @Setter
 public class Wizard extends Character{
-    public int numAtkUpgrades, numDefUpgrades;
+    public int numAtkUpgrades;
     public Wand wand;
     private House house;
     private List<Potion> potions;
     private ArrayList<AbstractSpell> knownSpells;
     //additional player stats
-    public String[] atkUpgrades = {"strength","Power","Might","Godlike Strength"};
-    public String[] defUpgrades = {"Heavy Bones","PowerB","MightB","Godlike StrengthB"};
+
+
     public Wizard(String name, House house){
 
         super(name, 100);
         this.numAtkUpgrades = 0;
-        this.numDefUpgrades = 0;
         //set additional stats
         this.potions = new ArrayList<>();
         this.knownSpells = new ArrayList<>();
@@ -31,7 +30,11 @@ public class Wizard extends Character{
 
     public void usePotion(Potion potion) {
             this.hp += potion.getPower();
-            this.potions.remove(potion);
+            this.potions.remove(0);
+            if (hp > maxHp){
+                this.hp = maxHp;
+            }
+
     }
 
     public void addPotion(Potion potion) {
@@ -63,9 +66,9 @@ public class Wizard extends Character{
     @Override
     public int defend(){
         if (house == House.GRYFFINDOR){
-            return (int) (Math.random()*(10/4 + numDefUpgrades*3 + 3) + 1 + numDefUpgrades*2 + numAtkUpgrades + 10);
+            return (int) (Math.random()*(10/4 + 3 + 3) + 1 + 2 + 10);
         }else {
-            return (int) (Math.random() * (10 / 4 + numDefUpgrades * 3 + 3) + 1 + numDefUpgrades * 2 + numAtkUpgrades + 1);
+            return (int) (Math.random() * (10 / 4 +  3 + 3) + 1 + 2 +  1);
         }
     }
 
