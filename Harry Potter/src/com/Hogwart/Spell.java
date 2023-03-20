@@ -9,16 +9,15 @@ class Spell extends AbstractSpell {
 
     public Spell(String name, int level, boolean dark, double successRate) {
         super(name, level, dark, successRate);
-
     }
 
     public boolean cast() {
         if (this.calculateSuccess()) {
             System.out.println("Casting spell: " + this.getName());
+            return true;
         } else {
             System.out.println("Spell failed: " + this.getName());
             return false;
         }
-        return true;
     }
 }

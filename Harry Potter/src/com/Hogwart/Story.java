@@ -182,9 +182,17 @@ public class Story {
         System.out.println("You have defeated Voldemort and Bellatrix Lestrange.");;
         System.out.println("Congratulation, you have finished your studies in Hogwart!!!");
         GameLogic.anythingToContinue();
+    }
 
+    public static void printSpecialEvent() {
+        GameLogic.clearConsole();
+        GameLogic.printSeperator(30);
+        System.out.println("Your wand has the same core than Voldemort's wand.");;
+        System.out.println("Your spell are  now much more powerfull");
+        GameLogic.anythingToContinue();
 
     }
+
 
 
 }

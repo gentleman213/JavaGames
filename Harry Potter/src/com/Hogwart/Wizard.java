@@ -8,6 +8,8 @@ import lombok.*;
 public class Wizard extends Character{
     public int numAtkUpgrades;
     public Wand wand;
+
+
     private House house;
     private List<Potion> potions;
     private ArrayList<AbstractSpell> knownSpells;
@@ -15,7 +17,6 @@ public class Wizard extends Character{
 
 
     public Wizard(String name, House house){
-
         super(name, 100);
         this.numAtkUpgrades = 0;
         //set additional stats
@@ -57,24 +58,23 @@ public class Wizard extends Character{
     @Override
     public int attack(){
         if (house == House.SLYTHERIN){
-            return (int) (20+5*numAtkUpgrades+10);
+            return (int) (5+5*numAtkUpgrades+5);
         }else{
-            return (int) (20+5*numAtkUpgrades);
+            return (int) (5+5*numAtkUpgrades);
         }
     }
 
     @Override
     public int defend(){
         if (house == House.GRYFFINDOR){
-            return (int) (Math.random()*(10/4 + 3 + 3) + 1 + 2 + 10);
+            return (int) (Math.random()*(15-5)) + 5;
         }else {
-            return (int) (Math.random() * (10 / 4 +  3 + 3) + 1 + 2 +  1);
+            return (int) (Math.random() * (10-1)) + 1;
         }
     }
 
 
     public void addHealthPoint() {
-
         maxHp += 20;
     }
 

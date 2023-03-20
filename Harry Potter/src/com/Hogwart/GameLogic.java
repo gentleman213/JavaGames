@@ -5,14 +5,12 @@ public class GameLogic {
     static Scanner scanner = new Scanner(System.in);
     static Wizard wizard;
     public static boolean isRunning;
-    private House house;
-
     //enemey names
     public static String[] enemies = {"Troll","Basilic","Dementors","Voldemort & Peter Portolion","Dolores Umbrage","The Death Eaters","Voldemort and Bellatrix Lestrange"};
     //Story elements
     public static int place = 0, act = 1;
     public static String[] places = {"Bathroom Dungeon","The Chamber of Secrets","Lake in the Forbidden Forest","Little Hangleton cemetery","Hogwarts examination room","Astronomy tower","Hogwart"};
-
+    public static double successRate = 0;
     public static int readInt(String prompt, int userChoices) {
         int input;
         do {
@@ -125,7 +123,15 @@ public class GameLogic {
 
         Wand wand = new Wand( coreType, 12);
         wizard.equip(wand);
-        wizard.learnSpell(new Spell("Wingardium Leviosa", 2, true, 0.5));
+
+
+        if (wizard.getHouse()== House.RAVENCLAW) {
+            successRate = 0.85;
+        }else{
+            successRate = 0.75;
+        }
+
+        wizard.learnSpell(new Spell("Wingardium Leviosa", 2, true, successRate));
 
         // Afficher les informations de la baguette du sorcier
         clearConsole();
@@ -138,9 +144,8 @@ public class GameLogic {
         System.out.println("You are now ready to begin your first year in Hogwart!");
         anythingToContinue();
         //setting is running to true, so the game loop can continue
+
         isRunning = true;
-
-
         //start main game loop
         gameLoop();
     }
@@ -152,15 +157,15 @@ public class GameLogic {
     //printing out the most important information about the player character
     public static void characterInfo(){
         clearConsole();
-        System.out.println(wizard.getHouse());
+
         printHeading("CHARACTER INFO");
+        System.out.println(wizard.getHouse());
+        printSeperator(20);
         System.out.println(wizard.name+"\tHP:"+wizard.hp+"/"+wizard.maxHp);
         printSeperator(20);
         // # of pots
-        wizard.addPotion(new Potion(5));
         System.out.println("# of Potions: " + wizard.getPotions().size());
         printSeperator(20);
-
         //printing the chosen traits
         if(wizard.numAtkUpgrades > 0){
             System.out.println("Offensive upgrade: " + wizard.numAtkUpgrades);
@@ -180,6 +185,8 @@ public class GameLogic {
             clearConsole();
             printHeading(enemy.name + "\nHP: " + enemy.hp + "/" +enemy.maxHp);
             printHeading(wizard.name + "\nHP: " + wizard.hp + "/" + wizard.maxHp);
+
+
             System.out.println("Choose an action");
             printSeperator(20);
             System.out.println("(1) Fight\n(2) Use Potion");
@@ -191,12 +198,11 @@ public class GameLogic {
                 if (!chooseSpell()) {
                     dmg = 0;
                 }
+                anythingToContinue();
                 //calculate dmg and dmgTook
                 int dmgTook = enemy.attack() - wizard.defend();
-                //check that dmh isn't negative
+                //check that dmg isn't negative
                 if (dmgTook < 0){
-                    //add some dmg if player defends very well
-                    dmg -=dmgTook/2;
                     dmgTook = 0;
                 }
                 if(dmg < 0)
@@ -207,9 +213,9 @@ public class GameLogic {
                 //print the info of this battle round
                 clearConsole();
                 printHeading("BATTLE");
-                System.out.println("You dealt" + dmg + " damage to the " + enemy.name + ".");
+                System.out.println("You dealt " + dmg + " damage to the " + enemy.name + ".");
                 printSeperator(15);
-                System.out.println("The" + enemy.name + "dealt " + dmgTook + "damage to you.");
+                System.out.println("The" + enemy.name + "dealt " + dmgTook + " damage to you.");
                 anythingToContinue();
                 //check if player is still alive
                 if(wizard.hp <=0){
@@ -233,9 +239,9 @@ public class GameLogic {
                     if (input == 1) {
                         //player actually took it
                         if (wizard.getHouse() == House.HUFFLEPUFF){
-                            wizard.usePotion(new Potion(20));
+                            wizard.usePotion(new Potion(60));
                         }else {
-                            wizard.usePotion(new Potion(10));
+                            wizard.usePotion(new Potion(50));
                         }
                         clearConsole();
                         printHeading("You drank a magic potion. You have now HP: " + wizard.hp);
@@ -266,9 +272,9 @@ public class GameLogic {
         int inputSpell = readInt("->",i);
         if (wizard.castSpell(inputSpell-1)){
             return true;
+        }else{
+            return false;
         }
-        anythingToContinue();
-        return false;
     }
 
     public static void printMenu() {
@@ -293,20 +299,19 @@ public class GameLogic {
             battle(new Enemy(enemies[0],10,1));
             //let the player "level up"
             wizard.chooseTrait();
-            wizard.learnSpell(new Spell("Accio", 5, true, 0.94));
+            wizard.learnSpell(new Spell("Accio", 5, true, successRate));
             //story
             Story.printFirstActOutro();
-            //fully heal the player
-            //wizard.hp = wizard.maxHp;
         } else if (act == 2) {
             //increment act and place
             act = 3;
             place = 2;
             Story.printSecondActIntro();
-            battle(new Enemy(enemies[1],10,1));
+            battle(new Enemy(enemies[1],15,1));
             //let the player "level up"
             wizard.chooseTrait();
-            wizard.learnSpell(new Spell("Expecto Patronum", 5, true, 0.14));
+            wizard.addPotion(new Potion(5));
+            wizard.learnSpell(new Spell("Expecto Patronum", 5, true, successRate));
             //story
             Story.printSecondActOutro();
         } else if (act == 3){
@@ -315,7 +320,7 @@ public class GameLogic {
             place = 3;
             Story.printThirdActIntro();
             //randomBattle();
-            battle(new Enemy(enemies[2],15,1));
+            battle(new Enemy(enemies[2],20,2));
             //let the player "level up"
             wizard.chooseTrait();
             wizard.addPotion(new Potion(5));
@@ -329,10 +334,10 @@ public class GameLogic {
             act = 5;
             place = 4;
             Story.printFourthActIntro();
-            battle(new Enemy(enemies[3],20,2));
+            battle(new Enemy(enemies[3],25,2));
             //let the player "level up"
             wizard.chooseTrait();
-            wizard.learnSpell(new Spell("Sectumsempra", 5, true, 0.14));
+            wizard.learnSpell(new Spell("Sectumsempra", 5, true, successRate));
             wizard.addPotion(new Potion(5));
             //story
             Story.printFourthActOutro();
@@ -355,7 +360,7 @@ public class GameLogic {
             battle(new Enemy(enemies[5],35,3));
             //let the player "level up"
             wizard.chooseTrait();
-            wizard.learnSpell(new Spell("Expelliarmus", 5, true, 0.14));
+            wizard.learnSpell(new Spell("Expelliarmus", 5, true, successRate));
             wizard.addPotion(new Potion(5));
             //story
             Story.printSixActOutro();
@@ -377,8 +382,13 @@ public class GameLogic {
     //the final battle
     public static void finalBattle(){
         Story.printSevenActIntro();
-        Wand wandBoss = new Wand( Core.WOOD, 12);
-        battle(new Boss("VOLDEMORT",300,10,wandBoss));
+        Wand wandBoss = new Wand( Core.WOOD, 22);
+
+        if (wizard.wand.getCore() == wandBoss.getCore()){
+            Story.printSpecialEvent();
+            wizard.numAtkUpgrades += 10;
+        }
+        battle(new Boss("VOLDEMORT",100,5,wandBoss));
         Story.printSevenActOutro();
         isRunning = false;
     }

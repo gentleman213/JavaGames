@@ -1,9 +1,9 @@
 package com.Hogwart;
 
 
+import lombok.Getter;
 
-
-
+@Getter
 public class Boss extends AbstractEnemy {
 
     public Wand wand;
@@ -15,16 +15,14 @@ public class Boss extends AbstractEnemy {
 
     //methods
     public int attack() {
-        return (int) (Math.random()*(10/4 + 1) + 10/4 + 3);
+        return (int) ((Math.random()*(10-1))+1)*strength;
         //return this.strength * 2*Math.random();
     }
-
     public void equip(Wand wand){
         this.wand = wand;
     }
-
     public int defend() {
-        return this.strength*2;
+        return (int) ((Math.random()*(3-1))+1)*strength;
     }
 }
 

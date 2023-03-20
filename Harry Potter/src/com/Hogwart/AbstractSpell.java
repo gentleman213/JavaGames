@@ -9,6 +9,7 @@ abstract class AbstractSpell {
     private boolean dark;
     private double successRate;
 
+
     public AbstractSpell(String name, int level, boolean dark, double successRate) {
         this.name = name;
         this.level = level;
