@@ -1,19 +1,20 @@
 package com.Hogwart;
+import com.Hogwart.character.*;
+import com.Hogwart.object.*;
+import com.Hogwart.spell.AbstractSpell;
+import com.Hogwart.spell.Spell;
 import java.util.Scanner;
 
 public class GameLogic {
     static Scanner scanner = new Scanner(System.in);
     static Wizard wizard;
-    static Wand wand;
     public static boolean isRunning;
-    //random encounters
-    public static String[] encounters = {"Battle","Battle","Battle","Rest","Rest"};
     //enemey names
-    public static String[] enemies = {"Ogre","Ogre","Gobelin","Ggobelin","Stone",};
+    public static String[] enemies = {"Troll","Basilic","Dementors","Voldemort & Peter Portolion","Dolores Umbrage","The Death Eaters","Voldemort and Bellatrix Lestrange"};
     //Story elements
     public static int place = 0, act = 1;
-    public static String[] places = {"Mountains","Mansion","Castle","throne"};
-
+    public static String[] places = {"Bathroom Dungeon","The Chamber of Secrets","Lake in the Forbidden Forest","Little Hangleton cemetery","Hogwarts examination room","Astronomy tower","Hogwart"};
+    public static double successRate = 0;
     public static int readInt(String prompt, int userChoices) {
         int input;
         do {
@@ -85,202 +86,104 @@ public class GameLogic {
                 nameSet = true;
         } while(!nameSet);
 
+        SortingHat sortingHat = new SortingHat();
+        House house = sortingHat.assignHouse();
+
+        //create new player object with the name
+        wizard = new Wizard(name, house);
+
         //print story intro
         Story.printIntro();
 
-        //create new player object with the name
+        // Demander à l'utilisateur de saisir un animal
+        clearConsole();
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Please, choose an animal:");
+        printSeperator(20);
+        for (Pet pet : Pet.values()) {
+            System.out.println("("+ (int)(pet.ordinal()+1) + ") " + pet.toString());
+        }
+        int petTypeIndex= readInt("->",4);
+        Pet petType = Pet.values()[petTypeIndex-1];
+
+        // Afficher les informations de la baguette du sorcier
+        clearConsole();
+        printHeading("You chose the " + petType  );
+        anythingToContinue();
 
 
-        //create new player object with the name
-        wand = new Wand(wand.getWandName());
 
-        //print first story act intro
-        Story.printFirstActIntro();
+        // Demander à l'utilisateur de saisir le type de core pour la baguette
+        clearConsole();
+        System.out.println("Please, choose a  core type for you wand:");
+        printSeperator(20);
+        for (Core core : Core.values()) {
+            System.out.println("("+ (int)(core.ordinal()+1) + ") " + core.toString());
+        }
+        int coreTypeIndex = readInt("->",4);
 
+        // Équiper le sorcier d'une baguette avec une longueur de 12 pouces et un core personnalisé
+        Core coreType = Core.values()[coreTypeIndex-1];
+
+        Wand wand = new Wand( coreType, 12);
+        wizard.equip(wand);
+
+
+        if (wizard.getHouse()== House.RAVENCLAW) {
+            successRate = 0.9;
+        }else{
+            successRate = 0.8;
+        }
+        Spell expelliarmus = new Spell("Expelliarmus", 5,successRate);
+        wizard.learnSpell(expelliarmus);
+
+        // Afficher les informations de la baguette du sorcier
+        clearConsole();
+        printHeading("The wizard " + name + "'s wand has a core in " + wand.getCore() + " and a length of " + wand.getLength() + " inches.");
+        anythingToContinue();
+
+        // Appel au Choipeau Magique pour assigner une maison
+        clearConsole();
+        printHeading(name + " was sorted into " + wizard.getHouse().name() + " House by the Sorting Hat");
+        System.out.println("You are now ready to begin your first year in Hogwart!");
+        anythingToContinue();
         //setting is running to true, so the game loop can continue
-        isRunning = true;
 
+        isRunning = true;
         //start main game loop
         gameLoop();
     }
     //method that changes the game's value base on player xp
-    public static void checkAct(){
-        //changes acts based on xp
-        if(wizard.xp >= 1 && act == 1){
-            //increment act and place
-            act = 2;
-            place = 1;
-            //story
-            Story.printFirstActOutro();
-            //let the player "level up"
-            wizard.chooseTrait();
-            //story
-            Story.printSecondActIntro();
-            //Assign new values to enemies
-            enemies[0] = "Evil Mercenary";
-            enemies[1] = "Goblin";
-            enemies[2] = "Wolve";
-            enemies[3] = "Henchman";
-            enemies[4] = "Scary";
-            //Assign new values to encounters
-            encounters[0] = "Battle";
-            encounters[1] = "Battle";
-            encounters[2] = "Battle";
-            encounters[3] = "Rest";
-            encounters[4] = "Shop";
-            //fully heal the player
-            wizard.hp = wizard.maxHp;
 
 
-        } else if (wizard.xp >= 10 && act == 2) {
-            //increment act and place
-            act = 3;
-            place = 2;
-            //story
-            Story.printSecondActOutro();
-            //let the player "level up"
-            wizard.chooseTrait();
-            //story
-            Story.printThirdActIntro();
 
-            enemies[0] = "Evil Mercenary";
-            enemies[1] = "Goblin";
-            enemies[2] = "Wolve";
-            enemies[3] = "Henchman";
-            enemies[4] = "Scary";
-            //Assign new values to encounters
-            encounters[0] = "Battle";
-            encounters[1] = "Battle";
-            encounters[2] = "Battle";
-            encounters[3] = "Rest";
-            encounters[4] = "Shop";
-
-        } else if (wizard.xp >=20 && act == 3){
-            //increment act and place
-            act = 4;
-            place = 3;
-            //story
-            Story.printThirdActOutro();
-            //let the player "level up"
-            wizard.chooseTrait();
-            //story
-            Story.printFourthActIntro();
-            //fully heal the player
-            wizard.hp = wizard.maxHp;
-            //calling the final battle.
-            finalBattle();
-
-        }
-
-    }
-
-    //method to calculate a rnadom encounter
-    public static void randomEncounter(){
-        int encounter = (int) (Math.random()* encounters.length);
-        if(encounters[encounter].equals("Battle")) {
-            randomBattle();
-        }else if(encounters[encounter].equals("Rest")) {
-            takeRest();
-        }else{
-            shop();
-        }
-    }
-
-    //method to continue the jouney (more next part)
-    public static void contineJourney() {
-        //check if act must be increased
-        checkAct();
-        //check if game isn't in last act
-        if (act != 4)
-            randomEncounter();
-    }
 
     //printing out the most important information about the player character
     public static void characterInfo(){
         clearConsole();
+
         printHeading("CHARACTER INFO");
+        System.out.println(wizard.getHouse());
+        printSeperator(20);
         System.out.println(wizard.name+"\tHP:"+wizard.hp+"/"+wizard.maxHp);
         printSeperator(20);
-        //player xp and gold
-        System.out.println("XP: " +wizard.xp + "\tGold " + wizard.gold);
-        printSeperator(20);
         // # of pots
-        System.out.println("# of Potions: " + wizard.pots);
+        System.out.println("# of Potions: " + wizard.getPotions().size());
         printSeperator(20);
-
-
         //printing the chosen traits
         if(wizard.numAtkUpgrades > 0){
-            System.out.println("Offensive trait: " + wizard.atkUpgrades[wizard.numAtkUpgrades -1]);
+            System.out.println("Offensive upgrade: " + wizard.numAtkUpgrades);
             printSeperator(20);
         }
-        if(wizard.numDefUpgrades > 0){
-            System.out.println("Defensive trait: " + wizard.defUpgrades[wizard.numDefUpgrades -1]);
-
-        }
         anythingToContinue();
     }
 
-    //shopping
-    public static void shop(){
-        clearConsole();
-        printHeading("You meet a mysterious stranger");
-        int price = (int) (Math.random()*(10 + wizard.pots*3) + 10 + wizard.pots);
-        System.out.println("Magic Potion:" + price + "gold");
-        printSeperator(20);
-        //Ask the player to buy one
-        System.out.println("Do you want to buy one?\n(1) Yes! \n(2) No thanks.");
-        int input = readInt("->",2);
-        if (input == 1){
-            clearConsole();
-            //check if he have enough gold
-            if(wizard.gold >= price){
-                printHeading("You bought a magical potion for " + price + "gold.");
-                wizard.pots++;
-                wizard.gold -= price;
-            }else
-                printHeading("You don't have enough gold");
-            anythingToContinue();
-        }
-    }
-
-    //taking a rest
-    public static void takeRest(){
-        clearConsole();
-        if(wizard.restsLeft >=1){
-            printHeading("Do you want to take a rest?("+wizard.restsLeft+"rest(s) left).");
-            System.out.println("(1) Yes! \n(2) No, not now.");
-            int input = readInt("->",2);
-            if (input == 1) {
-                //player actually takes rest
-                clearConsole();
-                if (wizard.hp < wizard.maxHp) {
-                    int hpRestored = (int) (Math.random() * (wizard.xp / 4 + 1) + 10);
-                    wizard.hp += hpRestored;
-                    if (wizard.hp > wizard.maxHp)
-                        wizard.hp = wizard.maxHp;
-                    System.out.println("You took a rest and restored up to " + hpRestored + "health.");
-                    System.out.println("You're now at ' " + wizard.hp + "/" + wizard.maxHp + "health.");
-                    wizard.restsLeft--;
-                } else
-                    System.out.println("You are at full life. you don't need to rest");
-            }
-            anythingToContinue();
-        }
-    }
 
 
-    //creating a random battle
-    public static void randomBattle(){
-        clearConsole();
-        printHeading("Tou encountered an ennemy");
-        anythingToContinue();
-        //creating new ennemy with random name
-        battle(new Enemy(enemies[(int)(Math.random()* enemies.length)],wizard.xp));
-    }
+
 
     //the main BATTLE method
-    public static void battle(Enemy enemy){
+    public static void battle(AbstractEnemy enemy){
         //main battle loop
         while(true){
             clearConsole();
@@ -288,18 +191,26 @@ public class GameLogic {
             printHeading(wizard.name + "\nHP: " + wizard.hp + "/" + wizard.maxHp);
             System.out.println("Choose an action");
             printSeperator(20);
-            System.out.println("(1) Fight\n(2) Use Potion\n(3) Run Away");
-            int input = readInt("->",3);
+            System.out.println("(1) Fight\n(2) Use Potion");
+            int input = readInt("->",2);
             //react accordingly to player input
             if(input == 1){
                 //FIGHT
+                clearConsole();
+                System.out.println("Choose a Spell");
+                printSeperator(20);
+                int dmg = 0;
+                int inputSpell = readInt("->", wizard.KnownSpells());
+                AbstractSpell spellName = wizard.getSpells().get(inputSpell-1);
+                int dmgSpell = wizard.attackWithSpell(spellName.getName());
+                if (dmgSpell != 0){
+                    dmg = wizard.attack() - enemy.defend() + dmgSpell;
+                }
+                anythingToContinue();
                 //calculate dmg and dmgTook
-                int dmg = wizard.attack() - enemy.defend();
                 int dmgTook = enemy.attack() - wizard.defend();
-                //check that dmh isn't negative
+                //check that dmg isn't negative
                 if (dmgTook < 0){
-                    //add some dmg if player defends very well
-                    dmg -=dmgTook/2;
                     dmgTook = 0;
                 }
                 if(dmg < 0)
@@ -310,9 +221,9 @@ public class GameLogic {
                 //print the info of this battle round
                 clearConsole();
                 printHeading("BATTLE");
-                System.out.println("You dealt" + dmg + " damage to the " + enemy.name + ".");
+                System.out.println("You dealt " + dmg + " damage to the " + enemy.name + ".");
                 printSeperator(15);
-                System.out.println("The" + enemy.name + "dealt " + dmgTook + "damage to you.");
+                System.out.println("The" + enemy.name + " dealt " + dmgTook + " damage to you.");
                 anythingToContinue();
                 //check if player is still alive
                 if(wizard.hp <=0){
@@ -321,62 +232,37 @@ public class GameLogic {
                 } else if (enemy.hp <= 0 ){
                     clearConsole();
                     printHeading("You defeated the " + enemy.name + "!");
-                    //increase player xp
-                    wizard.xp += enemy.xp;
-                    System.out.println("You earned" + enemy.xp + "XP!");
-                    //random drops
-                    boolean addRest =(Math.random()*5+1<=2.25);
-                    int goldEarned = (int) (Math.random()*enemy.xp);
-                    if (addRest){
-                        wizard.restsLeft++;
-                        System.out.println("You earned the chance to get an additional rest!");
-                    }
-                    if(goldEarned > 0){
-                        wizard.gold += goldEarned;
-                        System.out.println("You collect" + goldEarned + " gold from the " + enemy.name + "'s corpse!");
-                    }
                     anythingToContinue();
                     break;
                 }
             }else if(input == 2){
                 //USE POTION
                 clearConsole();
-                if (wizard.pots > 0 && wizard.hp < wizard.maxHp) {
+                if (wizard.getPotions().size() > 0 && wizard.hp < wizard.maxHp) {
                     //player CAN take a potion
                     //make sure player wants to drink the potion
-                    printHeading("do you want to drink a potion?("+wizard.pots + " left).");
+                    printHeading("do you want to drink a potion?("+wizard.getPotions().size() + " left).");
                     System.out.println("(1) Yes \n(2) No");
                     input = readInt("->", 2);
                     if (input == 1) {
                         //player actually took it
-                        wizard.hp = wizard.maxHp;
+                        if (wizard.getHouse() == House.HUFFLEPUFF){
+                            wizard.usePotion(new Potion(60));
+                        }else {
+                            wizard.usePotion(new Potion(50));
+                        }
                         clearConsole();
                         printHeading("You drank a magic potion. You have now HP: " + wizard.hp);
                         anythingToContinue();
                     }
+                }else if(wizard.getPotions().size() <= 0){
+                    //player CANNOT take a potion
+                    printHeading("You don't have any potion.");
+                    anythingToContinue();
                 }else{
                     //player CANNOT take a potion
-                    printHeading("You don't have any potion or you're at full health.");
+                    printHeading("You're already at full health.");
                     anythingToContinue();
-                }
-
-            }else{
-                //RUN AWAY
-                clearConsole();
-                //cahnce 35%
-                if(Math.random()*10 + 1 <= 3.5){
-                    printHeading("You ran away");
-                    anythingToContinue();
-                    break;
-                }else{
-                    printHeading("You didn't manage to escape");
-                    //calculate dmage
-                    int dmgTook = enemy.attack();
-                    System.out.println("You took "+dmgTook);
-                    anythingToContinue();
-
-                    if (wizard.hp<=0)
-                        wizardDied();
                 }
             }
         }
@@ -392,7 +278,89 @@ public class GameLogic {
         System.out.println("(3)Exit Game");
     }
 
-
+    //method to continue the jouney (more next part)
+    public static void continueJourney(){
+        //changes acts
+        if(act == 1){
+            //increment act and place
+            act = 2;
+            place = 1;
+            Story.printFirstActIntro();
+            //randomBattle();
+            battle(new Enemy(enemies[0],10,1));
+            //let the player "level up"
+            wizard.chooseTrait();
+            wizard.learnSpell(new Spell("Accio", 10, successRate-0.1));
+            //story
+            Story.printFirstActOutro();
+        } else if (act == 2) {
+            //increment act and place
+            act = 3;
+            place = 2;
+            Story.printSecondActIntro();
+            battle(new Enemy(enemies[1],15,1));
+            //let the player "level up"
+            wizard.chooseTrait();
+            wizard.addPotion(new Potion(5));
+            wizard.learnSpell(new Spell("Expecto Patronum", 15, successRate-0.15));
+            //story
+            Story.printSecondActOutro();
+        } else if (act == 3){
+            //increment act and place
+            act = 4;
+            place = 3;
+            Story.printThirdActIntro();
+            //randomBattle();
+            battle(new Enemy(enemies[2],20,2));
+            //let the player "level up"
+            wizard.chooseTrait();
+            wizard.addPotion(new Potion(5));
+            //story
+            Story.printThirdActOutro();
+            //fully heal the player
+            //wizard.hp = wizard.maxHp;
+            Story.printFourthActIntro();
+        } else if (act == 4) {
+            //increment act and place
+            act = 5;
+            place = 4;
+            Story.printFourthActIntro();
+            battle(new Enemy(enemies[3],25,2));
+            //let the player "level up"
+            wizard.chooseTrait();
+            wizard.learnSpell(new Spell("Sectumsempra", 25,  successRate-0.25));
+            wizard.addPotion(new Potion(5));
+            //story
+            Story.printFourthActOutro();
+        }else if (act == 5) {
+            //increment act and place
+            act = 6;
+            place = 5;
+            Story.printFiveActIntro();
+            battle(new Enemy(enemies[4],30,3));
+            //let the player "level up"
+            wizard.chooseTrait();
+            wizard.addPotion(new Potion(5));
+            //story
+            Story.printFiveActOutro();
+        }else if (act == 6) {
+            //increment act and place
+            act = 7;
+            place = 6;
+            Story.printSixActIntro();
+            battle(new Enemy(enemies[5],35,3));
+            //let the player "level up"
+            wizard.chooseTrait();
+            wizard.learnSpell(new Spell("Expelliarmus", 50, successRate-0.5));
+            wizard.addPotion(new Potion(5));
+            //story
+            Story.printSixActOutro();
+            //fully heal the player
+            wizard.hp = wizard.maxHp;
+            //calling the final battle.
+            finalBattle();
+        }
+    }
 
     //method when player is dead
     public static void wizardDied(){
@@ -401,10 +369,18 @@ public class GameLogic {
         System.out.println("GAME OVER");
         isRunning=false;
     }
+
     //the final battle
     public static void finalBattle(){
-        battle(new Enemy("VOLDEMORT",300));
-        //Story.printEnd(wizard);
+        Story.printSevenActIntro();
+        Wand wandBoss = new Wand( Core.WOOD, 22);
+
+        if (wizard.wand.getCore() == wandBoss.getCore()){
+            Story.printSpecialEvent();
+            wizard.numAtkUpgrades += 10;
+        }
+        battle(new Boss("VOLDEMORT",100,5,wandBoss));
+        Story.printSevenActOutro();
         isRunning = false;
     }
 
@@ -416,7 +392,7 @@ public class GameLogic {
             printMenu();
             int input = readInt("->",3);
             if(input == 1)
-                contineJourney();
+                continueJourney();
             else if (input == 2)
                 characterInfo();
             else
