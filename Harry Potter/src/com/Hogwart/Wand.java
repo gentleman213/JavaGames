@@ -1,22 +1,35 @@
 package com.Hogwart;
 
 public class Wand {
-    private Core core;
-    private int length;
+    private String wandName;
 
-    public Wand(Core core, int length) {
-        this.core = core;
-        this.length = length;
+
+    public Wand(String wandName){
+        this.wandName = wandName;
+
     }
 
-
-    public Core getCore() {
-        return core;
+    public String getWandName(){
+        return this.wandName;
     }
 
-    public int getLength() {
-        return length;
-    }
+    public void chooseWand() {
+        GameLogic.clearConsole();
+        GameLogic.printHeading("Choose a wand:");
+        System.out.println("(1) Attack Wand");
+        System.out.println("(2) Defend Wand");
+        //get the player choice:
+        int input = GameLogic.readInt("->",2);
+        GameLogic.clearConsole();
+        if(input ==1){
+            GameLogic.printHeading("You chose Bla!");
+        }else{
+            GameLogic.printHeading("You chose"+ "Boulou!");
+        }
+        GameLogic.anythingToContinue();
+
+        }
+
+
+
 }
-
-

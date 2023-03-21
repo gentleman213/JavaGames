@@ -1,104 +1,58 @@
 package com.Hogwart;
 
-import java.util.ArrayList;
-import java.util.List;
-import lombok.*;
-@Getter
-@Setter
 public class Wizard extends Character{
-    public int numAtkUpgrades;
+
+    public int numAtkUpgrades, numDefUpgrades;
     public Wand wand;
-
-
-    private House house;
-    private List<Potion> potions;
-    private ArrayList<AbstractSpell> knownSpells;
     //additional player stats
+    int gold, restsLeft, pots;
 
+    public String[] atkUpgrades = {"strength","Power","Might","Godlike Strength"};
+    public String[] defUpgrades = {"Heavy Bones","PowerB","MightB","Godlike StrengthB"};
+    public Wizard(String name, Wand wand){
 
-    public Wizard(String name, House house){
-        super(name, 100);
+        super(name, 100, 0);
+        this.wand = null;
         this.numAtkUpgrades = 0;
+        this.numDefUpgrades = 0;
         //set additional stats
-        this.potions = new ArrayList<>();
-        this.knownSpells = new ArrayList<>();
-        this.house = house;
-    }
-    public void equip(Wand wand){
-        this.wand = wand;
-    }
-
-
-    public void usePotion(Potion potion) {
-            this.hp += potion.getPower();
-            this.potions.remove(0);
-            if (hp > maxHp){
-                this.hp = maxHp;
-            }
-
-    }
-
-    public void addPotion(Potion potion) {
-        this.potions.add(potion);
-    }
-
-    public void learnSpell(AbstractSpell spell) {
-        System.out.println("Wizard " +  " is learning spell: " + spell.getName());
-        this.knownSpells.add(spell);
-    }
-
-    public boolean castSpell(int index) {
-        AbstractSpell spell = this.knownSpells.get(index);
-        System.out.println("Wizard " + " is casting spell: " + spell.getName());
-        return spell.cast();
+        this.gold = 5;
+        this.restsLeft = 1;
+        this.pots = 0;
+        //let the player choose a trait when creating a new character
+        chooseTrait();
+        wand.chooseWand();
     }
 
 
 
     @Override
     public int attack(){
-        if (house == House.SLYTHERIN){
-            return (int) (5+5*numAtkUpgrades+5);
-        }else{
-            return (int) (5+5*numAtkUpgrades);
-        }
+        return (int) (Math.random()*(xp/4 + numAtkUpgrades*3 + 3) + xp/10 + numAtkUpgrades*2 + numDefUpgrades + 1);
     }
 
     @Override
     public int defend(){
-        if (house == House.GRYFFINDOR){
-            return (int) (Math.random()*(15-5)) + 5;
-        }else {
-            return (int) (Math.random() * (10-1)) + 1;
-        }
+        return (int) (Math.random()*(xp/4 + numDefUpgrades*3 + 3) + xp/10 + numDefUpgrades*2 + numAtkUpgrades + 1);
     }
-
-
-    public void addHealthPoint() {
-        maxHp += 20;
-    }
-
-
 
     //let the player choose a trait
     public void chooseTrait() {
         GameLogic.clearConsole();
         GameLogic.printHeading("Choose a trait:");
-        System.out.println("(1) Attack upgrade");
-        System.out.println("(2) Life upgrade");
+        System.out.println("(1)"+atkUpgrades[numAtkUpgrades]);
+        System.out.println("(2)"+defUpgrades[numDefUpgrades]);
         //get the player choice:
         int input = GameLogic.readInt("->",2);
         GameLogic.clearConsole();
         if(input ==1){
-            GameLogic.printHeading("You chose Attack upgrade!");
+            GameLogic.printHeading("You chose"+atkUpgrades[numAtkUpgrades] + "!");
             numAtkUpgrades++;
         }else{
-            GameLogic.printHeading("You chose Life upgrade !");
-            addHealthPoint();
+            GameLogic.printHeading("You chose"+defUpgrades[numDefUpgrades]+ "!");
+            numDefUpgrades++;
         }
         GameLogic.anythingToContinue();
     }
-
-
 
 }
