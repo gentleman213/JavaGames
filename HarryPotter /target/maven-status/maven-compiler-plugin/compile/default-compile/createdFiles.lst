@@ -1,0 +1,17 @@
+org/example/character/Wizard.class
+org/example/character/SortingHat.class
+org/example/Main.class
+org/example/character/AbstractEnemy.class
+org/example/object/Wand.class
+org/example/object/House.class
+org/example/spell/ForbiddenSpell.class
+org/example/object/Potion.class
+org/example/character/Boss.class
+org/example/object/Pet.class
+org/example/object/Core.class
+org/example/character/Enemy.class
+org/example/character/Character.class
+org/example/spell/AbstractSpell.class
+org/example/Story.class
+org/example/spell/Spell.class
+org/example/GameLogic.class
