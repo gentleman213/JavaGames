@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="38d386be-d096-4bb7-8fe9-e248a9e39520" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/Harry Potter/.classpath" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Harry Potter/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Harry Potter/.idea/compiler.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Harry Potter/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Harry Potter/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Harry Potter/.idea/uiDesigner.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Harry Potter/.project" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Harry Potter/Harry Potter.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Harry Potter/out/production/Harry Potter/com/Hogwart/GameLogic.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Harry Potter/out/production/Harry Potter/com/Hogwart/Main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Harry Potter/out/production/Harry Potter/com/Hogwart/Story.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Harry Potter/out/production/Harry Potter/com/Hogwart/character/AbstractEnemy.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Harry Potter/out/production/Harry Potter/com/Hogwart/character/Boss.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Harry Potter/out/production/Harry Potter/com/Hogwart/character/Character.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Harry Potter/out/production/Harry Potter/com/Hogwart/character/Enemy.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Harry Potter/out/production/Harry Potter/com/Hogwart/character/SortingHat.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Harry Potter/out/production/Harry Potter/com/Hogwart/character/Wizard.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Harry Potter/out/production/Harry Potter/com/Hogwart/object/Core.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Harry Potter/out/production/Harry Potter/com/Hogwart/object/House.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Harry Potter/out/production/Harry Potter/com/Hogwart/object/Pet.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Harry Potter/out/production/Harry Potter/com/Hogwart/object/Potion.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Harry Potter/out/production/Harry Potter/com/Hogwart/object/Wand.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Harry Potter/out/production/Harry Potter/com/Hogwart/spell/AbstractSpell.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Harry Potter/out/production/Harry Potter/com/Hogwart/spell/ForbiddenSpell.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Harry Potter/out/production/Harry Potter/com/Hogwart/spell/Spell.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Harry Potter/src/com/Hogwart/GameLogic.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Harry Potter/src/com/Hogwart/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Harry Potter/src/com/Hogwart/Story.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Harry Potter/src/com/Hogwart/character/AbstractEnemy.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Harry Potter/src/com/Hogwart/character/Boss.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Harry Potter/src/com/Hogwart/character/Character.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Harry Potter/src/com/Hogwart/character/Enemy.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Harry Potter/src/com/Hogwart/character/SortingHat.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Harry Potter/src/com/Hogwart/character/Wizard.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Harry Potter/src/com/Hogwart/object/Core.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Harry Potter/src/com/Hogwart/object/House.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Harry Potter/src/com/Hogwart/object/Pet.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Harry Potter/src/com/Hogwart/object/Potion.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Harry Potter/src/com/Hogwart/object/Wand.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Harry Potter/src/com/Hogwart/spell/AbstractSpell.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Harry Potter/src/com/Hogwart/spell/ForbiddenSpell.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Harry Potter/src/com/Hogwart/spell/Spell.java" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="2MokDGC73ExgzPP6NwJ79e1tNe3" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/thibaudbarberon/Desktop/JavaISEP2023&quot;
+  }
+}</component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="38d386be-d096-4bb7-8fe9-e248a9e39520" name="Changes" comment="" />
+      <created>1678441201496</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1678441201496</updated>
+    </task>
+    <servers />
+  </component>
+</project>
