@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane fx:id="rootPane" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/17" fx:controller="org.tibo.controllers.Test">
+   <ImageView fitWidth="600.0" fitHeight="400.0">
+      <image>
+         <Image url="images/pxfuel.jpg"/>
+      </image>
+   </ImageView>
+
+   <Button layoutX="275.0" layoutY="180.0" text="Démarrer le jeu" onAction="#startGame"/>
+
+</AnchorPane>
+
+
+
+
+package org.tibo;
+
+import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
+import javafx.scene.control.Button;
+
+public class MyController {
+    @FXML
+    private Button startButton; // Référence au bouton dans le fichier FXML
+
+    @FXML
+    public void startGame() {
+        // Méthode appelée lorsque le bouton est cliqué
+        System.out.println("Le jeu démarre !"); // Remplacez cette ligne par votre code pour démarrer le jeu
+    }
+}

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.collections.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="400" prefWidth="600" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.tibo.controllers.SetUp">
+
+    <children>
+        <ImageView fitHeight="400" fitWidth="600" pickOnBounds="true">
+            <image>
+                <Image url="@images/parchemin.jpg" />
+            </image>
+        </ImageView>
+        <Label layoutX="40" layoutY="20" styleClass="title" text="Please complete the following">
+        <font>
+            <Font name="Times New Roman" size="24.0" />
+        </font></Label>
+        <Label fx:id="errorText" layoutX="80.0" layoutY="55.0" text="" textFill="#800e11"/>
+        <Label layoutX="80" layoutY="100" text="Your Name :" />
+        <TextField fx:id="nameField" layoutX="180" layoutY="96" promptText="Write your name here" styleClass="input-field" />
+        <Label layoutX="80" layoutY="150" text="Choose a Pet:" />
+        <ComboBox fx:id="animalBox" layoutX="180.0" layoutY="146.0">
+            <items>
+                <FXCollections fx:factory="observableArrayList">
+                    <String fx:value="Cat" />
+                    <String fx:value="Owl" />
+                    <String fx:value="Rat" />
+                    <String fx:value="Toad" />
+                </FXCollections>
+            </items>
+        </ComboBox>
+        <Label layoutX="80" layoutY="200" text="Core type of you wand :" />
+        <ComboBox fx:id="matiereBox" layoutX="260.0" layoutY="196.0">
+            <items>
+                <FXCollections fx:factory="observableArrayList">
+                    <String fx:value="WOOD" />
+                    <String fx:value="DRAGON_HEARTSTRING" />
+                    <String fx:value="PHOENIX_FEATHER" />
+                    <String fx:value="UNICORN_HAIR" />
+                </FXCollections>
+            </items>
+        </ComboBox>
+        <Label layoutX="80" layoutY="250" text="Size of you wand :" />
+        <Slider fx:id="length" layoutX="268.0" layoutY="250.0" max="30" min="10" prefWidth="180" value="20">
+        <blockIncrement>1</blockIncrement>
+        </Slider>
+        <Label fx:id="lengthLabel" layoutX="456.0" layoutY="249.0" text="${length.value}" />
+        <Label layoutX="486.0" layoutY="249.0" text="cm" />
+        <Button layoutX="260" layoutY="320" onAction="#validate" text="Confirm" />
+    </children>
+</AnchorPane>

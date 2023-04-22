@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="650.0" prefWidth="875.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.tibo.controllers.End">
+    <children>
+    <ImageView fitHeight="650.0" fitWidth="875.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <image>
+            <Image url="@images/end.png" />
+        </image>
+    </ImageView>
+
+        <VBox alignment="CENTER" spacing="10.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <StackPane alignment="CENTER">
+            <ImageView fitHeight="450.0" fitWidth="605.0">
+               <image>
+                   <Image url="@images/diploma.png" />
+               </image>
+           </ImageView>
+            <Label fx:id="diplomaName" styleClass="title" text="HARRY POTTER" textFill="BLACK">
+                <font>
+                    <Font name="Times New Roman" size="48.0" />
+                </font>
+               <StackPane.margin>
+                  <Insets bottom="30.0" />
+               </StackPane.margin></Label>
+            </StackPane>
+            <Button onAction="#menu" prefHeight="25.0" prefWidth="200.0" styleClass="custom-button" text="Menu">
+                <font>
+                    <Font name="System Bold" size="13.0" />
+                </font></Button>
+        </VBox>
+    </children>
+</AnchorPane>

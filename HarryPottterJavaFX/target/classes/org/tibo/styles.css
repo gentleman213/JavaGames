@@ -1,0 +1,5 @@
+/* styles.css */
+.custom-button:hover {
+    -fx-background-color: #3fb3e3; /* Couleur de fond en survol */
+    -fx-text-fill: white; /* Couleur du texte en survol */
+}

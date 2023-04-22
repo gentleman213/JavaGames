@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="650.0" prefWidth="1075.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.tibo.controllers.Fight">
+
+
+
+    <children>
+        <ImageView fitHeight="650.0" fitWidth="1075.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <image>
+                <Image url="@images/landscape.png" />
+            </image>
+        </ImageView>
+        <ImageView fx:id="wizardImage" fitHeight="350.0" fitWidth="255.0" layoutX="58.0" layoutY="300.0">
+            <image>
+                <Image url="@images/character/Harry.png" />
+            </image>
+        </ImageView>
+        <ProgressBar fx:id="healthBar" layoutX="140.0" layoutY="290.0" progress="1.0" style="-fx-accent: green;">
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+         <padding>
+            <Insets left="-10.0" right="-10.0" />
+         </padding></ProgressBar>
+
+        <Label fx:id="healthLabel" layoutX="150.0" layoutY="292.0" text="HP: 100/100">
+         <font>
+            <Font size="12.0" />
+         </font></Label>
+        <ProgressBar fx:id="EnemyHealthBar" layoutX="770.0" layoutY="200.0" progress="1.0" style="-fx-accent: green;">
+            <opaqueInsets>
+                <Insets />
+            </opaqueInsets>
+            <padding>
+                <Insets left="-10.0" right="-10.0" />
+            </padding></ProgressBar>
+        <Label fx:id="EnemyHealthLabel" layoutX="785.0" layoutY="202.0" text="HP: 10/10">
+            <font>
+                <Font size="12.0" />
+            </font></Label>
+        <ImageView fx:id="enemyImage" fitHeight="350.0" fitWidth="255.0" layoutX="690.0" layoutY="230.0">
+            <image>
+                <Image url="@images/character/troll.png" />
+            </image>
+        </ImageView>
+        <VBox alignment="TOP_CENTER" spacing="50" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+
+        <Label fx:id="dialog" layoutX="373.0" layoutY="59.0" style="-fx-font-size: 12px; -fx-background-color: black; -fx-alignment: center; -fx-text-fill: white; -fx-border-radius: 5; -fx-border-color: white; -fx-border-width: 1px;" text="THE PHILOSOHILOSOPHERto ng mind to sort,">
+         <font>
+            <Font name="Times New Roman" size="13.0" />
+         </font>
+         <padding>
+            <Insets bottom="15.0" left="10.0" right="10.0" top="15.0" />
+         </padding>
+            <opaqueInsets>
+               <Insets />
+            </opaqueInsets></Label>
+           <Button fx:id="Menu" mnemonicParsing="false" onAction="#menu" style="-fx-background-color: black; -fx-text-fill: white; -fx-border-color: green; -fx-border-width: 2;" text="Menu" textAlignment="CENTER">
+            <padding>
+               <Insets bottom="10.0" left="50.0" right="50.0" top="10.0" />
+            </padding>
+            <font>
+               <Font name="Times New Roman" size="18.0" />
+            </font>
+         </Button>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+         <padding>
+            <Insets top="90.0" />
+         </padding>
+        </VBox>
+        <Button fx:id="next" layoutX="490.0" layoutY="523.0" mnemonicParsing="false" onAction="#next" style="-fx-background-color: black; -fx-border-color: gold; -fx-border-radius: 2; -fx-text-fill: white; -fx-border-width: 2;" text="Continue">
+        <font>
+            <Font size="16.0" />
+        </font>
+        <padding>
+            <Insets bottom="5.0" left="30.0" right="30.0" top="5.0" />
+        </padding></Button>
+      <Button fx:id="fight" layoutX="490.0" layoutY="523.0" mnemonicParsing="false" style="-fx-background-color: black; -fx-border-color: red; -fx-border-radius: 2; -fx-text-fill: white; -fx-border-width: 2;" text="Fight" textFill="WHITE">
+         <font>
+            <Font size="16.0" />
+         </font>
+         <padding>
+            <Insets bottom="5.0" left="20.0" right="20.0" top="5.0" />
+         </padding></Button>
+      <Button fx:id="potion" layoutX="582.0" layoutY="523.0" mnemonicParsing="false" style="-fx-background-color: black; -fx-border-color: blue; -fx-border-radius: 2; -fx-border-width: 2; -fx-text-fill: white;" text="Potion">
+         <padding>
+            <Insets bottom="5.0" left="18.0" right="18.0" top="5.0" />
+         </padding>
+         <font>
+            <Font size="16.0" />
+         </font></Button>
+        <Button fx:id="ok" layoutX="639.0" layoutY="565.0" mnemonicParsing="false"  style="-fx-background-color: red; -fx-text-fill: white;" text="Ok" />
+        <Button fx:id="lifeUpgrade" layoutX="600.0" layoutY="523.0" mnemonicParsing="false" style="-fx-background-color: black; -fx-border-color: blue; -fx-border-radius: 2; -fx-border-width: 2; -fx-text-fill: white;" text="Life upgrade">
+        <padding>
+            <Insets bottom="5.0" left="18.0" right="18.0" top="5.0" />
+        </padding>
+        <font>
+            <Font size="16.0" />
+        </font></Button>
+        <Button fx:id="attackUpgrade" layoutX="450.0" layoutY="523.0" mnemonicParsing="false" style="-fx-background-color: black; -fx-border-color: red; -fx-border-radius: 2; -fx-border-width: 2; -fx-text-fill: white;" text="Attack upgrade">
+    <padding>
+        <Insets bottom="5.0" left="18.0" right="18.0" top="5.0" />
+    </padding>
+    <font>
+        <Font size="16.0" />
+    </font></Button>
+      <ChoiceBox fx:id="spellSelection" layoutX="490.0" layoutY="565.0" prefWidth="150.0" style="-fx-border-color: red; -fx-text-fill: red; back: ;" />
+    </children>
+</AnchorPane>

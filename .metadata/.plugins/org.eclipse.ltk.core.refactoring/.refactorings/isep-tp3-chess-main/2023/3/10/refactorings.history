@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy element &apos;lombok.jar&apos; to &apos;isep-tp3-chess-main&apos;&#x0A;- Original project: &apos;isep-tp3-chess-main&apos;&#x0A;- Destination element: &apos;isep-tp3-chess-main&apos;&#x0A;- Original element: &apos;lombok.jar&apos;" description="Copy file" destination="=isep-tp3-chess-main" element1="lombok.jar" files="1" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1678438000301" units="0" version="1.0"/>
+</session>

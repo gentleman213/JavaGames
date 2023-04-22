@@ -1,0 +1,4 @@
+#myChoiceBox .list-cell {
+    -fx-text-fill: red;
+    -fx-background-color: yellow;
+}

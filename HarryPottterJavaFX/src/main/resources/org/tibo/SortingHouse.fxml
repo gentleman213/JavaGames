@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.tibo.controllers.SortingHouse">
+   <children>
+      <ImageView fitHeight="400" fitWidth="600" pickOnBounds="true">
+         <image>
+            <Image url="@images/sortingHat.jpeg" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="140" fitWidth="200" layoutX="350.0" layoutY="19.0" opacity="0.9" pickOnBounds="true">
+         <image>
+            <Image url="@images/bulle.png" />
+         </image>
+      </ImageView>
+      <Button fx:id="houseButton" layoutX="250.0" layoutY="294.0" onAction="#tellMe" opacity="0.8" style="-fx-background-color: black; -fx-text-fill: white; -fx-border-radius: 20; -fx-border-color: gold; -fx-border-width: 1px;" text="          Tell me!          " />
+      <Label fx:id="dialogHouse" layoutX="373.0" layoutY="59.0" style="-fx-font-size: 12px; -fx-alignment: center;" text="Mon titre" />
+      <Label fx:id="house" layoutX="373.0" layoutY="59.0" style="-fx-font-size: 28px; -fx-alignment: center;" text="" />
+
+   </children>
+</AnchorPane>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/HarryPottterUltimate.iml" filepath="$PROJECT_DIR$/HarryPottterUltimate.iml" />
+      <module fileurl="file://$PROJECT_DIR$/javafxapp.iml" filepath="$PROJECT_DIR$/javafxapp.iml" />
+    </modules>
+  </component>
+</project>

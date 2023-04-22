@@ -1,0 +1,36 @@
+package fr.isep.tp3.piece;
+
+import fr.isep.tp3.Cell;
+import fr.isep.tp3.Chess;
+
+
+public class Bishop extends Piece {
+
+	public Bishop(boolean color) {
+		super(color);
+	}
+
+	@Override
+	public String name() {
+		return "B"+colorName();
+	}
+
+	
+	
+	@Override
+	public List<Position> computeMoves(boolean currcolor, Position curr, Chess game) {
+		List<Position> res = new ArrayList<Position>();
+		int startRow = curr.now;
+		int startCol = curr.column;
+		int maxi = 8 - Math.max(startRow,startCol);
+		for (int i = 1; i<maxi; i++) {
+			Cell cell = game.getCell(startRow+i, startCol+1);
+			Piece piece = cell.getPiece();
+		}
+		if (piece == null) {
+			res.add(cell.pos);
+		}else if(piece == )
+		return res;
+	}
+}
+
