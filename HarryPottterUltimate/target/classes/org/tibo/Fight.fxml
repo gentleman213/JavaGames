@@ -97,7 +97,7 @@
          <font>
             <Font size="16.0" />
          </font></Button>
-        <Button fx:id="ok" layoutX="639.0" layoutY="565.0" mnemonicParsing="false" style="-fx-background-color: red; -fx-text-fill: white;" text="Ok" />
+        <Button fx:id="ok" layoutX="639.0" layoutY="565.0" mnemonicParsing="false"  style="-fx-background-color: red; -fx-text-fill: white;" text="Ok" />
         <Button fx:id="lifeUpgrade" layoutX="600.0" layoutY="523.0" mnemonicParsing="false" style="-fx-background-color: black; -fx-border-color: blue; -fx-border-radius: 2; -fx-border-width: 2; -fx-text-fill: white;" text="Life upgrade">
         <padding>
             <Insets bottom="5.0" left="18.0" right="18.0" top="5.0" />
@@ -112,6 +112,6 @@
     <font>
         <Font size="16.0" />
     </font></Button>
-      <ChoiceBox fx:id="spellSelection" layoutX="490.0" layoutY="565.0" prefWidth="150.0" style="-fx-border-color: red; -fx-text-fill: red; back: ;" />
+      <ChoiceBox fx:id="spellSelection" layoutX="490.0" layoutY="565.0" prefWidth="150.0" style="-fx-border-color: red; -fx-text-fill: red;" />
     </children>
 </AnchorPane>

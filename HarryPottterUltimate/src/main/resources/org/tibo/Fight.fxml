@@ -112,6 +112,6 @@
     <font>
         <Font size="16.0" />
     </font></Button>
-      <ChoiceBox fx:id="spellSelection" layoutX="490.0" layoutY="565.0" prefWidth="150.0" style="-fx-border-color: red; -fx-text-fill: red; back: ;" />
+      <ChoiceBox fx:id="spellSelection" layoutX="490.0" layoutY="565.0" prefWidth="150.0" style="-fx-border-color: red; -fx-text-fill: red;" />
     </children>
 </AnchorPane>
