@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="450f488b-92ff-401b-b960-a4ca9b24d0a2" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/jarRepositories.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__junit_junit_4_13_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apiguardian_apiguardian_api_1_1_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_hamcrest_hamcrest_core_1_3.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_jupiter_junit_jupiter_api_5_9_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_jupiter_junit_jupiter_engine_5_9_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_platform_junit_platform_commons_1_9_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_platform_junit_platform_engine_1_9_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_base_19_0_2_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_base_mac_19_0_2_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_controls_19_0_2_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_controls_mac_19_0_2_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_fxml_19_0_2_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_fxml_mac_19_0_2_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_graphics_19_0_2_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_graphics_mac_19_0_2_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_opentest4j_opentest4j_1_2_0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_projectlombok_lombok_1_18_26.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/javafxapp.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/tibo/JavaFXApp.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/tibo/Story.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/tibo/character/AbstractEnemy.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/tibo/character/Boss.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/tibo/character/Character.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/tibo/character/Enemy.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/tibo/character/SortingHat.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/tibo/character/Wizard.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/tibo/controllers/End.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/tibo/controllers/Fight.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/tibo/controllers/MainWindow.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/tibo/controllers/SetUp.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/tibo/controllers/SortingHouse.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/tibo/controllers/Test.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/tibo/object/Core.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/tibo/object/House.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/tibo/object/Pet.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/tibo/object/Potion.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/tibo/object/Wand.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/tibo/spell/AbstractSpell.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/tibo/spell/ForbiddenSpell.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/tibo/spell/Spell.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/org/tibo/End.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/org/tibo/Fight.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/org/tibo/MainWindow.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/org/tibo/SetUp.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/org/tibo/SortingHouse.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/org/tibo/Test.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/org/tibo/images/bulle.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/org/tibo/images/character/Basilic.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/org/tibo/images/character/Bellatrix.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/org/tibo/images/character/DeathEaters.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/org/tibo/images/character/Dolores.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/org/tibo/images/character/Harry.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/org/tibo/images/character/Petter.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/org/tibo/images/character/Voldemort.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/org/tibo/images/character/dementors.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/org/tibo/images/character/troll.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/org/tibo/images/diploma.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/org/tibo/images/end.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/org/tibo/images/landscape.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/org/tibo/images/parchemin.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/org/tibo/images/pxfuel.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/org/tibo/images/sortingHat.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/test" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/tibo/End.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/tibo/Fight.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/tibo/JavaFXApp.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/tibo/MainWindow.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/tibo/SetUp.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/tibo/SetUpPage.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/tibo/SortingHouse.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/tibo/Story.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/tibo/Test.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/tibo/character/AbstractEnemy.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/tibo/character/Boss.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/tibo/character/Character.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/tibo/character/Enemy.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/tibo/character/SortingHat.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/tibo/character/Wizard.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/tibo/chooseAnimal&amp;Wand.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/tibo/controllers/End.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/tibo/controllers/Fight.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/tibo/controllers/MainWindow.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/tibo/controllers/SetUp.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/tibo/controllers/SortingHouse.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/tibo/controllers/Test.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/tibo/images/Basilic.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/tibo/images/Bellatrix.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/tibo/images/DeathEaters.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/tibo/images/Dolores.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/tibo/images/Harry.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/tibo/images/Petter.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/tibo/images/Voldemort.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/tibo/images/Voldemort.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/tibo/images/bulle.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/tibo/images/character/Basilic.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/tibo/images/character/Bellatrix.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/tibo/images/character/DeathEaters.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/tibo/images/character/Dolores.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/tibo/images/character/Harry.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/tibo/images/character/Petter.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/tibo/images/character/Voldemort.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/tibo/images/character/dementors.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/tibo/images/character/troll.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/tibo/images/dementors.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/tibo/images/diploma.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/tibo/images/end.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/tibo/images/landscape.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/tibo/images/parchemin.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/tibo/images/pxfuel.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/tibo/images/sortingHat.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/tibo/images/troll.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/tibo/images/warGamesLogo.PNG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/tibo/list.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/tibo/object/Core.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/tibo/object/House.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/tibo/object/Pet.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/tibo/object/Potion.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/tibo/object/Wand.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/tibo/spell/AbstractSpell.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/tibo/spell/ForbiddenSpell.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/tibo/spell/Spell.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/tibo/styles.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="FxmlFile" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="useMavenConfig" value="true" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="2OYs8WXrlmRvlCnslAUpAqNkX9c" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;last_directory_selection&quot;: &quot;/Users/thibaudbarberon/Desktop/HarryPottterUltimate/src/main/java/org/tibo&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/thibaudbarberon/Desktop/JavaISEP2023/HarryPottterUltimate&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/resources/org/tibo/images" />
+      <recent name="$PROJECT_DIR$/src/main/resources/org/tibo" />
+      <recent name="$PROJECT_DIR$/src/main/resources" />
+      <recent name="$PROJECT_DIR$" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="org.tibo" />
+    </key>
+  </component>
+  <component name="RunAnythingCache">
+    <option name="myCommands">
+      <command value="mvn clean" />
+      <command value="mvn " />
+      <command value="mvn javafx:run" />
+    </option>
+  </component>
+  <component name="RunManager">
+    <configuration name="JavaFXApp" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.tibo.JavaFXApp" />
+      <module name="javafxapp" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.tibo.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.JavaFXApp" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="450f488b-92ff-401b-b960-a4ca9b24d0a2" name="Changes" comment="" />
+      <created>1681748693593</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1681748693593</updated>
+    </task>
+    <servers />
+  </component>
+</project>
