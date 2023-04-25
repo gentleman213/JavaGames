@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
@@ -16,9 +17,11 @@
             <Image url="@images/bulle.png" />
          </image>
       </ImageView>
-      <Button fx:id="houseButton" layoutX="250.0" layoutY="294.0" onAction="#tellMe" opacity="0.8" style="-fx-background-color: black; -fx-text-fill: white; -fx-border-radius: 20; -fx-border-color: gold; -fx-border-width: 1px;" text="          Tell me!          " />
+      <Button fx:id="houseButton" layoutX="250.0" layoutY="294.0" onAction="#tellMe" opacity="0.8" style="-fx-background-color: black; -fx-text-fill: white; -fx-border-radius: 20; -fx-border-color: gold; -fx-border-width: 1px;" text="          Tell me!          ">   <cursor>
+         <Cursor fx:constant="HAND" />
+      </cursor></Button>
       <Label fx:id="dialogHouse" layoutX="373.0" layoutY="59.0" style="-fx-font-size: 12px; -fx-alignment: center;" text="Mon titre" />
-      <Label fx:id="house" layoutX="373.0" layoutY="59.0" style="-fx-font-size: 28px; -fx-alignment: center;" text="" />
+      <Label fx:id="house" layoutX="373.0" layoutY="67.0" style="-fx-font-size: 28px; -fx-alignment: center;" text="" />
 
    </children>
 </AnchorPane>

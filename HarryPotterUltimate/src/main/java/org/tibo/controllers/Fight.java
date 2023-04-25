@@ -9,10 +9,7 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 
-import javafx.scene.control.Button;
-import javafx.scene.control.ChoiceBox;
-import javafx.scene.control.Label;
-import javafx.scene.control.ProgressBar;
+import javafx.scene.control.*;
 import javafx.scene.effect.ColorAdjust;
 import javafx.scene.image.Image;
 import javafx.fxml.FXML;
@@ -32,10 +29,10 @@ import org.tibo.object.Wand;
 import org.tibo.spell.AbstractSpell;
 import org.tibo.spell.ForbiddenSpell;
 import org.tibo.spell.Spell;
-
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+
 
 
 import static org.tibo.Story.*;
@@ -76,7 +73,6 @@ public class Fight {
     @FXML private ImageView foudre;
     @FXML private ImageView foudre2;
     @FXML private ImageView fail;
-
 
 
 

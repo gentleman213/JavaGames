@@ -7,6 +7,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
+<?import javafx.scene.Cursor?>
 <AnchorPane prefHeight="400" prefWidth="600" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.tibo.controllers.SetUp">
 
     <children>
@@ -50,6 +51,8 @@
         </Slider>
         <Label fx:id="lengthLabel" layoutX="456.0" layoutY="249.0" text="${length.value}" />
         <Label layoutX="486.0" layoutY="249.0" text="cm" />
-        <Button layoutX="260" layoutY="320" onAction="#validate" text="Confirm" />
+        <Button layoutX="260" layoutY="320" onAction="#validate" text="Confirm" ><cursor>
+            <Cursor fx:constant="HAND" />
+        </cursor></Button>
     </children>
 </AnchorPane>

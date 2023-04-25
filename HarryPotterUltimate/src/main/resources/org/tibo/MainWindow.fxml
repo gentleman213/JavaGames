@@ -5,6 +5,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
+<?import javafx.scene.Cursor?>
 <AnchorPane id="AnchorPane" prefHeight="650.0" prefWidth="1075.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.tibo.controllers.MainWindow">
 
    <children>
@@ -21,7 +22,9 @@
          <Button onAction="#startGame" prefHeight="25.0" prefWidth="200.0" styleClass="custom-button" text="Start Game">
             <font>
                <Font name="System Bold" size="13.0" />
-            </font></Button>
+            </font><cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></Button>
       </VBox>
    </children>
 </AnchorPane>
