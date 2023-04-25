@@ -51,7 +51,6 @@ public class Fight {
     @FXML private  Button next;
     @FXML private  Button Menu;
     @FXML private  Button fight;
-
     @FXML private  Button lifeUpgrade;
     @FXML private  Button attackUpgrade;
     @FXML private  Button ok;
@@ -63,9 +62,8 @@ public class Fight {
 
     public static double successRate = 0;
 
-    public static String[] enemies = {"Troll","Basilic","Dementors","Voldemort & Peter Portolion","Dolores Umbrage","The Death Eaters","Bellatrix Lestrange","Voldemort"};
-    public static int place = 0, act = 1;
-    public static boolean isRunning;
+    private static String[] enemies = {"Troll","Basilic","Dementors","Voldemort & Peter Portolion","Dolores Umbrage","The Death Eaters","Bellatrix Lestrange","Voldemort"};
+    private int place = 0, act = 1;
     private int index = 0;
     private int clics = 0;
 
@@ -107,7 +105,6 @@ public class Fight {
             successRate = 0.82;
         }
         wizard.learnSpell(new Spell("Expelliarmus", 5,successRate));
-        isRunning = true;
         dialog.setText(print1FirstActIntro());
         Menu.setVisible(false);
         visibleFightButtons(false,false,false);
