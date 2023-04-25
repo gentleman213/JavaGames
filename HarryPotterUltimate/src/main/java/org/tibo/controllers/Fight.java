@@ -157,6 +157,7 @@ public class Fight {
             continueJourney();
             dialog.setText(print1SevenActOutro());
         }else if(clics == 9) {
+            readAudio("success");
             dialog.setText(printEnd());
             next.setText("Receive my diploma");
         }else{
@@ -178,6 +179,7 @@ public class Fight {
             //increment act and place
             act = 2;
             place = 1;
+            readAudio("monster");
             battle(new Enemy(enemies[0],10,1));
         } else if (act == 2) {
             //let the player "level up"
@@ -187,6 +189,7 @@ public class Fight {
             //increment act and place
             act = 3;
             place = 2;
+            readAudio("snake");
             battle(new Enemy(enemies[1],15,1));
             //story
         } else if (act == 3){
@@ -196,6 +199,7 @@ public class Fight {
             //increment act and place
             act = 4;
             place = 3;
+            readAudio("ghost");
             battle(new Enemy(enemies[2],20,2));
             //let the player "level up"
             potion.setText("Potion ("+wizard.getPotions().size()+")");
@@ -203,6 +207,7 @@ public class Fight {
             //increment act and place
             act = 5;
             place = 4;
+            readAudio("Peter");
             battle(new Enemy(enemies[3],25,2));
         }else if (act == 5) {
             //let the player "level up"
@@ -211,6 +216,7 @@ public class Fight {
             //increment act and place
             act = 6;
             place = 5;
+            readAudio("woman");
             battle(new Enemy(enemies[4],30,3));
             //let the player "level up"
             potion.setText("Potion ("+wizard.getPotions().size()+")");
@@ -219,6 +225,7 @@ public class Fight {
             //increment act and place
             act = 7;
             place = 6;
+            readAudio("group");
             battle(new Enemy(enemies[5],35,3));
             //let the player "level up"
             potion.setText("Potion ("+wizard.getPotions().size()+")");
