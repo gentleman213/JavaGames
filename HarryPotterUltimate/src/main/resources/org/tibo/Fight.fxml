@@ -6,12 +6,13 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.shape.*?>
 <?import javafx.scene.text.*?>
-<?import javafx.scene.effect.*?>
+
 <?import javafx.scene.Cursor?>
+<?import javafx.scene.media.MediaView?>
 
 <AnchorPane prefHeight="650.0" prefWidth="1075.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.tibo.controllers.Fight">
 
-
+    <MediaView fx:id="mediaView" fitWidth="400" fitHeight="300" />
 
     <children>
 

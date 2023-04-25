@@ -15,6 +15,9 @@ import javafx.scene.image.Image;
 import javafx.fxml.FXML;
 import javafx.scene.image.ImageView;
 
+import javafx.scene.media.Media;
+import javafx.scene.media.MediaPlayer;
+import javafx.scene.media.MediaView;
 import javafx.scene.shape.Rectangle;
 import javafx.stage.Stage;
 import javafx.util.Duration;
@@ -29,6 +32,8 @@ import org.tibo.object.Wand;
 import org.tibo.spell.AbstractSpell;
 import org.tibo.spell.ForbiddenSpell;
 import org.tibo.spell.Spell;
+
+import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
@@ -71,6 +76,8 @@ public class Fight {
     @FXML private ImageView foudre;
     @FXML private ImageView foudre2;
     @FXML private ImageView fail;
+    @FXML
+    private MediaView mediaView;
 
 
 
@@ -219,6 +226,7 @@ public class Fight {
             //increment act and place
             act = 8;
             place = 7;
+            readAudio("Belatrix");
             battle(new Enemy(enemies[6], 50, 4));
         }else{
             wizard.hp = wizard.maxHp;
@@ -246,7 +254,8 @@ public class Fight {
             });
                 ok.setOnAction(actionEvent -> {
 
-                    //mediaPlayer.play();
+
+
                 int dmg = 0;
                 int selectedIndex = spellSelection.getSelectionModel().getSelectedIndex();
                 AbstractSpell spellName = wizard.getSpells().get(selectedIndex);
@@ -263,7 +272,9 @@ public class Fight {
                 if(dmg <= 0) {
                     dmg = 0;
                     playAnimation(fail,500);
+                    readAudio("fail");
                 }else {
+                    readAudio("attack");
                     playAnimation(foudre,1000);
                     playAnimation(foudre2,1000);
                     playAnimation(lightning,300);
@@ -309,6 +320,7 @@ public class Fight {
                             wizard.usePotion(new Potion(50));
                         }
                     wizardColorFilter(-0.90);
+                    readAudio("potion");
                     dialog.setText("You drank a magic potion. You have now HP: " + wizard.hp);
                         healthbar();
                     potion.setText("Potion ("+wizard.getPotions().size()+")");
@@ -328,6 +340,7 @@ public class Fight {
 
 
     public void finalBattle(){
+        readAudio("Voldemort");
         wizard.learnForbiddenSpell(new ForbiddenSpell("Forbidden Spell: Avada Kedavra", 1000,0.5,10));
         wizard.addPotion(new Potion(5));
         potion.setText("Potion ("+wizard.getPotions().size()+")");
@@ -343,6 +356,7 @@ public class Fight {
 
 
     public void wizardDied(){
+        readAudio("gameOver");
         dialog.setText("You died...\n\n\nGAME OVER");
         Menu.setVisible(true);
         visibleFightButtons(false,false,false);
@@ -371,6 +385,7 @@ public class Fight {
             healthbar();
             next.setVisible(true);
             wizardColorFilter(0.4);
+            readAudio("levelUp");
         });
         attackUpgrade.setOnAction(actionEvent -> {
             wizard.numAtkUpgrades++;
@@ -378,6 +393,7 @@ public class Fight {
             visibleFightButtons(false,false,false);
             next.setVisible(true);
             wizardColorFilter(-0.5);
+            readAudio("levelUp");
         });
     }
 
@@ -403,4 +419,14 @@ public class Fight {
         );
         timeline.play();
     }
+
+    public void readAudio(String audioName){
+        String path = "/Users/thibaudbarberon/Desktop/JavaISEP2023/HarryPotterUltimate/src/main/resources/org/tibo/audio/"+audioName+".mp3"; // remplacer par le chemin du fichier audio à jouer
+        Media media = new Media(new File(path).toURI().toString());
+        MediaPlayer mediaPlayer = new MediaPlayer(media);
+        mediaView.setMediaPlayer(mediaPlayer);
+        mediaPlayer.play();
+    }
+
+
 }
