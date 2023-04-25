@@ -1,5 +1,6 @@
 package org.tibo.controllers;
 
+import javafx.animation.*;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -7,15 +8,20 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+
 import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.ProgressBar;
+import javafx.scene.effect.ColorAdjust;
 import javafx.scene.image.Image;
 import javafx.fxml.FXML;
 import javafx.scene.image.ImageView;
+
+import javafx.scene.shape.Rectangle;
 import javafx.stage.Stage;
-import org.tibo.Story;
+import javafx.util.Duration;
+
 import org.tibo.character.AbstractEnemy;
 import org.tibo.character.Boss;
 import org.tibo.character.Enemy;
@@ -30,7 +36,7 @@ import org.tibo.spell.Spell;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.concurrent.CountDownLatch;
+
 
 import static org.tibo.Story.*;
 import static org.tibo.controllers.SetUp.wizard;
@@ -66,6 +72,23 @@ public class Fight {
     private int index = 0;
     private int clics = 0;
 
+    @FXML private Rectangle lightning;
+    @FXML private ImageView foudre;
+    @FXML private ImageView foudre2;
+    @FXML private ImageView fail;
+
+
+
+
+    private void playAnimation(Node node, int duration) {
+        FadeTransition ft = new FadeTransition(Duration.millis(duration), node);
+        ft.setFromValue(1.0);
+        ft.setToValue(0.0);
+        ft.setCycleCount(1);
+        ft.play();
+    }
+
+
 
     public void initialize() {
         // Ajout des titres dans la liste
@@ -79,6 +102,8 @@ public class Fight {
         enemy.add("../images/Voldemort.png");
         enemy.add("../images/Harry.png");
         setImage(index);
+
+
 
         if (wizard.getHouse()== House.RAVENCLAW) {
             successRate = 0.9;
@@ -94,6 +119,7 @@ public class Fight {
 
     }
 
+
     public void visibleFightButtons(boolean Fightvisibility,boolean spellVisibility,boolean upgradeVisibility) {
         fight.setVisible(Fightvisibility);
         potion.setVisible(Fightvisibility);
@@ -103,16 +129,7 @@ public class Fight {
         attackUpgrade.setVisible((upgradeVisibility));
     }
 
-    public static void characterInfo(){
-        System.out.println(wizard.getHouse());
-        System.out.println(wizard.name+"\tHP:"+wizard.hp+"/"+wizard.maxHp);
-        // # of pots
-        System.out.println("# of Potions: " + wizard.getPotions().size());
-        //printing the chosen traits
-        if(wizard.numAtkUpgrades > 0){
-            System.out.println("Offensive upgrade: " + wizard.numAtkUpgrades);
-        }
-    }
+
 
     public void next(ActionEvent event)throws IOException {
         clics++;
@@ -204,6 +221,7 @@ public class Fight {
             place = 6;
             battle(new Enemy(enemies[5],35,3));
             //let the player "level up"
+            potion.setText("Potion ("+wizard.getPotions().size()+")");
         }else if (act == 7) {
             //increment act and place
             act = 8;
@@ -234,6 +252,8 @@ public class Fight {
                 dialog.setText("Choose a Spell :"+wizard.KnownSpells());
             });
                 ok.setOnAction(actionEvent -> {
+
+                    //mediaPlayer.play();
                 int dmg = 0;
                 int selectedIndex = spellSelection.getSelectionModel().getSelectedIndex();
                 AbstractSpell spellName = wizard.getSpells().get(selectedIndex);
@@ -247,8 +267,19 @@ public class Fight {
                 if (dmgTook < 0){
                     dmgTook = 0;
                 }
-                if(dmg < 0)
+                if(dmg <= 0) {
                     dmg = 0;
+                    playAnimation(fail,500);
+                }else {
+                    playAnimation(foudre,1000);
+                    playAnimation(foudre2,1000);
+                    playAnimation(lightning,300);
+                    TranslateTransition translateTransition = new TranslateTransition(Duration.seconds(0.1), enemyImage);
+                    translateTransition.setCycleCount(10);
+                    translateTransition.setAutoReverse(true);
+                    translateTransition.setByX(-5);
+                    translateTransition.play();
+                }
                 //deal damage to both parties
                 wizard.hp -= dmgTook;
                 enemy.hp -= dmg;
@@ -284,6 +315,7 @@ public class Fight {
                         } else {
                             wizard.usePotion(new Potion(50));
                         }
+                    wizardColorFilter(-0.90);
                     dialog.setText("You drank a magic potion. You have now HP: " + wizard.hp);
                         healthbar();
                     potion.setText("Potion ("+wizard.getPotions().size()+")");
@@ -345,12 +377,14 @@ public class Fight {
             visibleFightButtons(false,false,false);
             healthbar();
             next.setVisible(true);
+            wizardColorFilter(0.4);
         });
         attackUpgrade.setOnAction(actionEvent -> {
             wizard.numAtkUpgrades++;
             dialog.setText("You chose Attack upgrade!");
             visibleFightButtons(false,false,false);
             next.setVisible(true);
+            wizardColorFilter(-0.5);
         });
     }
 
@@ -362,5 +396,18 @@ public class Fight {
         stage.setScene(scene);
         stage.centerOnScreen(); // Loads the stage in the middle
         stage.show();
+    }
+
+
+    public void wizardColorFilter(double color){
+        ColorAdjust colorAdjust = new ColorAdjust();
+        colorAdjust.setHue(color);
+        wizardImage.setEffect(colorAdjust);
+        Timeline timeline = new Timeline(
+                new KeyFrame(Duration.seconds(1), e -> {
+                    wizardImage.setEffect(null);
+                })
+        );
+        timeline.play();
     }
 }

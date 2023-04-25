@@ -4,6 +4,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
 <?import javafx.scene.text.*?>
 
 <AnchorPane prefHeight="650.0" prefWidth="1075.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.tibo.controllers.Fight">
@@ -16,6 +17,7 @@
                 <Image url="@images/landscape.png" />
             </image>
         </ImageView>
+
         <ImageView fx:id="wizardImage" fitHeight="350.0" fitWidth="255.0" layoutX="58.0" layoutY="300.0">
             <image>
                 <Image url="@images/character/Harry.png" />
@@ -49,8 +51,8 @@
                 <Image url="@images/character/troll.png" />
             </image>
         </ImageView>
+        <Rectangle fx:id="lightning" fill="WHITE" height="650.0" opacity="0.0" width="1075.0" />
         <VBox alignment="TOP_CENTER" spacing="50" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-
         <Label fx:id="dialog" layoutX="373.0" layoutY="59.0" style="-fx-font-size: 12px; -fx-background-color: black; -fx-alignment: center; -fx-text-fill: white; -fx-border-radius: 5; -fx-border-color: white; -fx-border-width: 1px;" text="THE PHILOSOHILOSOPHERto ng mind to sort,">
          <font>
             <Font name="Times New Roman" size="13.0" />
@@ -61,6 +63,7 @@
             <opaqueInsets>
                <Insets />
             </opaqueInsets></Label>
+
            <Button fx:id="Menu" mnemonicParsing="false" onAction="#menu" style="-fx-background-color: black; -fx-text-fill: white; -fx-border-color: green; -fx-border-width: 2;" text="Menu" textAlignment="CENTER">
             <padding>
                <Insets bottom="10.0" left="50.0" right="50.0" top="10.0" />
@@ -76,6 +79,23 @@
             <Insets top="90.0" />
          </padding>
         </VBox>
+
+        <ImageView fx:id="foudre" fitHeight="350.0" fitWidth="255.0" layoutX="690.0" layoutY="230.0" opacity="0.0">
+            <image>
+                <Image url="@images/eclair2.png" />
+            </image>
+        </ImageView>
+        <ImageView fx:id="foudre2" fitHeight="650.0" fitWidth="200.0" layoutX="397.0" layoutY="150.0" opacity="0.0" rotate="-99.5" AnchorPane.bottomAnchor="-150.0">
+            <image>
+                <Image url="@images/eclair1.png" />
+            </image>
+        </ImageView>
+        <ImageView fx:id="fail" fitHeight="250.0" fitWidth="200.0" layoutX="241.0" layoutY="383.0" opacity="0.0" rotate="-99.5" AnchorPane.bottomAnchor="17.0">
+            <image>
+                <Image url="@images/eclair1.png" />
+            </image>
+        </ImageView>
+
         <Button fx:id="next" layoutX="490.0" layoutY="523.0" mnemonicParsing="false" onAction="#next" style="-fx-background-color: black; -fx-border-color: gold; -fx-border-radius: 2; -fx-text-fill: white; -fx-border-width: 2;" text="Continue">
         <font>
             <Font size="16.0" />
@@ -97,7 +117,7 @@
          <font>
             <Font size="16.0" />
          </font></Button>
-        <Button fx:id="ok" layoutX="639.0" layoutY="565.0" mnemonicParsing="false"  style="-fx-background-color: red; -fx-text-fill: white;" text="Ok" />
+        <Button fx:id="ok" layoutX="639.0" layoutY="565.0" mnemonicParsing="false" style="-fx-background-color: red; -fx-text-fill: white;" text="Ok" />
         <Button fx:id="lifeUpgrade" layoutX="600.0" layoutY="523.0" mnemonicParsing="false" style="-fx-background-color: black; -fx-border-color: blue; -fx-border-radius: 2; -fx-border-width: 2; -fx-text-fill: white;" text="Life upgrade">
         <padding>
             <Insets bottom="5.0" left="18.0" right="18.0" top="5.0" />
