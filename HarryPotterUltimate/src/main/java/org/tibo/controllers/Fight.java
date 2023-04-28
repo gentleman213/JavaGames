@@ -428,7 +428,7 @@ public class Fight {
     }
 
     public void readAudio(String audioName){
-        String path = "/Users/thibaudbarberon/Desktop/JavaISEP2023/HarryPotterUltimate/src/main/resources/org/tibo/audio/"+audioName+".mp3"; // remplacer par le chemin du fichier audio à jouer
+        String path = "src/main/resources/org/tibo/audio/"+audioName+".mp3"; // remplacer par le chemin du fichier audio à jouer
         Media media = new Media(new File(path).toURI().toString());
         MediaPlayer mediaPlayer = new MediaPlayer(media);
         mediaView.setMediaPlayer(mediaPlayer);
