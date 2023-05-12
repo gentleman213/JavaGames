@@ -52,6 +52,7 @@ public class Test {
             Stage stage = new Stage();
             stage.setScene(scene);
             stage.centerOnScreen();
+            stage.setResizable(false);
             stage.show();
         }
         String texteActuel = textes.get(texteActuelIndex); // Obtenir la valeur de texte correspondante dans la liste

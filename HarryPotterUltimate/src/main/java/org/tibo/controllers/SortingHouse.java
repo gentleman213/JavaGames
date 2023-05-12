@@ -45,6 +45,7 @@ public class SortingHouse {
             Scene scene = new Scene(root);
             stage.setScene(scene);
             stage.centerOnScreen(); // Loads the stage in the middle
+            stage.setResizable(false);
             stage.show();
         });
 
