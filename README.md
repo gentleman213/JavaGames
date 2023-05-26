@@ -6,8 +6,8 @@
 2. [Console](#console)
 3. [JavaFx](#javafx)
 ### II. 6 Qui Prend
-1. [General Info](#general-info)
-2. [JavaFx](#javafx)
+1. [General Info](##general-info)
+2. [JavaFx](##javafx)
 
 # Harry Potter
 ### General Info
@@ -28,7 +28,7 @@ Now you can play on the Terminal.
 ***
 ### JavaFx
 ***
-Open the folder HarryPotterUltimate and run by typen the maven command: ``` mvn javafx:run ```
+Open the folder HarryPotterUltimate and run by typing the maven command: ``` mvn javafx:run ```
 
 Now you can enjoy the game on the JavaFx interface.
 ***
@@ -49,7 +49,7 @@ In this game you can choose between playing with friends or BOT.
 
 ### JavaFx
 ***
-Open the folder SixQuiPren and run by typen the maven command: ``` mvn javafx:run ```
+Open the folder SixQuiPrend and run by typing the maven command: ``` mvn javafx:run ```
 Use Intelij IDEA for the IDE.
 
 Now you can enjoy the game on the JavaFx interface.
