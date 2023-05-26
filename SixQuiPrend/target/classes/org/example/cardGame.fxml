@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.media.MediaView?>
+<AnchorPane prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.controllers.CardGame">
+    <MediaView fx:id="mediaView" fitWidth="400" fitHeight="300" />
+    <ImageView fitHeight="650.0" fitWidth="1075.0" layoutX="750.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <image>
+            <Image url="@images/wood2.jpg" />
+        </image>
+    </ImageView>
+    <VBox alignment="CENTER" spacing="50" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <Button fx:id="menu" mnemonicParsing="false" onAction="#menu" style="-fx-background-color: black; -fx-text-fill: white; -fx-border-color: white; -fx-border-width: 2;" text="Menu" textAlignment="CENTER">
+            <padding>
+                <Insets bottom="10.0" left="50.0" right="50.0" top="10.0" />
+            </padding>
+            <cursor>
+                <Cursor fx:constant="HAND" />
+            </cursor>
+        </Button>
+    </VBox>
+      <VBox fx:id="rectangleContainer" alignment="CENTER_LEFT" layoutX="80.0" layoutY="40.0" spacing="10.0">
+            <HBox fx:id="pile1" spacing="10.0" />
+            <HBox fx:id="pile2" spacing="10.0" />
+            <HBox fx:id="pile3" spacing="10.0" />
+            <HBox fx:id="pile4" spacing="10.0" />
+      </VBox>
+      <HBox fx:id="playerCard" alignment="BOTTOM_CENTER" layoutX="80.0" layoutY="500.0" spacing="10.0">
+
+      </HBox>
+   <Rectangle arcHeight="50.0" arcWidth="50.0" fill="#e8eea4" height="230.0" layoutX="721.0" layoutY="100.0" stroke="BLACK" strokeType="INSIDE" width="220.0" />
+    <Label layoutX="750.0" layoutY="120.0" style="-fx-font-weight: 400;" text="SCORE BOARD" textFill="#6b3f3f">
+      <font>
+         <Font name="Tamil MN" size="19.0" />
+      </font></Label>
+
+   <Label fx:id="scoreBoard" layoutX="750.0" layoutY="150.0" text="Label" textFill="#4d4d4d" />
+    <Label fx:id="playerLabel" layoutX="700.0" layoutY="57.0" style="-fx-background-color: BLACK; -fx-background-radius: 30;" text="PLAYER" textFill="WHITE">
+        <font>
+            <Font name="Symbol" size="19.0" />
+        </font>
+      <padding>
+         <Insets bottom="6.0" left="20.0" right="20.0" top="6.0" />
+      </padding></Label>
+    <Label fx:id="roundLabel" layoutX="700.0" layoutY="24.0" style="-fx-background-color: BLACK; -fx-background-radius: 30;" text="ROUND" textFill="WHITE">
+        <font>
+            <Font name="Symbol" size="13.0" />
+        </font>
+        <padding>
+            <Insets bottom="6.0" left="20.0" right="20.0" top="6.0" />
+        </padding></Label>
+
+</AnchorPane>

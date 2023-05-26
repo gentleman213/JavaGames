@@ -1,0 +1,8 @@
+org/example/model/Pile.class
+org/example/model/Player.class
+org/example/controllers/CardGame$1.class
+org/example/controllers/SetUp.class
+org/example/model/Card.class
+org/example/controllers/MainWindow.class
+org/example/JavaFXApp.class
+org/example/controllers/Rules.class

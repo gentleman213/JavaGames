@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="650.0" prefWidth="1075.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.controllers.MainWindow">
+
+    <children>
+        <ImageView fitHeight="650.0" fitWidth="1075.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <image>
+                <Image url="@images/wood.JPG" />
+            </image>
+        </ImageView>
+        <VBox alignment="CENTER" spacing="0.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="-100.0">
+            <ImageView fitHeight="350.0" fitWidth="1005.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                <image>
+                    <Image url="@images/titre.png" />
+                </image>
+            </ImageView>
+            <Button onAction="#startGame" prefHeight="25.0" prefWidth="200.0" styleClass="custom-button" text="Start Game">
+                <font>
+                    <Font name="System Bold" size="13.0" />
+                </font><cursor>
+                <Cursor fx:constant="HAND" />
+            </cursor>
+            <VBox.margin>
+               <Insets top="-80.0" />
+            </VBox.margin></Button>
+            <Button onAction="#rules" prefHeight="25.0" prefWidth="160.0" styleClass="custom-button" text="Rules">
+                <font>
+                    <Font name="System Bold" size="13.0" />
+                </font><cursor>
+                <Cursor fx:constant="HAND" />
+            </cursor>
+            <VBox.margin>
+               <Insets top="10.0" />
+            </VBox.margin>
+              </Button>
+        </VBox>
+    </children>
+</AnchorPane>

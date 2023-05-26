@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="650.0" prefWidth="1075.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.controllers.SetUp">
+
+    <children>
+        <ImageView fitHeight="650.0" fitWidth="1075.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <image>
+                <Image url="@images/wood.JPG" />
+            </image>
+        </ImageView>
+        <VBox alignment="CENTER" spacing="20.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <Label fx:id="errorMessage" text="" textFill="RED" />
+            <HBox fx:id="plusMinus" alignment="CENTER" spacing="10.0">
+                <Label text="Number of players: " />
+                <Label fx:id="numberOfPlayersLabel" text="2" />
+                <Button onAction="#decrementNumberOfPlayers" text="-"><cursor>
+                <Cursor fx:constant="HAND" />
+                </cursor></Button>
+                <Button onAction="#incrementNumberOfPlayers" text="+">
+                <cursor>
+                    <Cursor fx:constant="HAND" />
+                </cursor></Button>
+            </HBox>
+            <Label fx:id="name" text="Player i name :" />
+         <CheckBox fx:id="aiCheckbox" mnemonicParsing="false" text="Play with AI" />
+            <TextField fx:id="nameField" maxWidth="-Infinity" prefWidth="200.0" promptText="Write your name here" styleClass="input-field">
+            <VBox.margin>
+               <Insets />
+            </VBox.margin></TextField>
+            <Button onAction="#confirm" prefHeight="25.0" prefWidth="200.0" styleClass="custom-button" text="Confirm">
+                <font>
+                    <Font name="System Bold" size="13.0" />
+                </font><cursor>
+                <Cursor fx:constant="HAND" />
+            </cursor>
+                <VBox.margin>
+                </VBox.margin></Button>
+        </VBox>
+    </children>
+</AnchorPane>
