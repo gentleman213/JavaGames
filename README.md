@@ -6,8 +6,8 @@
 2. [Console](#console)
 3. [JavaFx](#javafx)
 ### II. 6 Qui Prend
-1. [General Info](##general-info)
-2. [JavaFx](##javafx)
+1. [Rules](#rules)
+2. [Set Up](#set-up)
 
 # Harry Potter
 ### General Info
@@ -39,7 +39,7 @@ Now you can enjoy the game on the JavaFx interface.
 <img width="1187" alt="Capture d’écran 2023-04-23 à 01 08 22" src="https://user-images.githubusercontent.com/100601616/233811775-164186c1-7788-47bd-bc2a-aea227aa6f79.png">
 
 # 6 Qui Prend
-### General Info
+### Rules
 ***
 6 Qui Prend is a card game which can be played from 2 to 10 players. The aim of the game is not to get any cards. Each card you have to pick up will cost you a minus point per bullhead shown on it.
 The player who has the fewest bullheads at the end wins the game.
@@ -47,7 +47,7 @@ The player who has the fewest bullheads at the end wins the game.
 In this game you can choose between playing with friends or BOT. 
 ***
 
-### JavaFx
+### Set Up
 ***
 Open the folder SixQuiPrend and run by typing the maven command: ``` mvn javafx:run ```
 Use Intelij IDEA for the IDE.
