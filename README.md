@@ -55,4 +55,11 @@ Use Intelij IDEA for the IDE.
 Now you can enjoy the game on the JavaFx interface.
 ***
 
+#### Screenshots
+
+<img width="1187" alt="Capture d’écran 2023-05-26 à 16 29 44" src="https://github.com/gentleman213/JavaISEP2023/assets/100601616/3f01ea80-843b-4d1a-8323-846ded781f78">
+
+
+<img width="1187" alt="Capture d’écran 2023-05-26 à 16 30 41" src="https://github.com/gentleman213/JavaISEP2023/assets/100601616/819aa679-33a6-490e-8c01-a2f0ecd1f652">
+
 
